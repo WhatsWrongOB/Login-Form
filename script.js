@@ -78,3 +78,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+const showPass = document.querySelector('#show')
+const password = document.querySelector('.password')
+
+const showPassword = () => {
+    if (password.type === 'password') {
+        password.type = "text"
+    }
+    else {
+        password.type = "password"
+    }
+}
+
+const passwordTyped = () => {
+    if (password.value.length > 0) {
+        showPass.style.display = "inline"
+    }
+    else {
+        showPass.style.display = "none"
+    }
+}
+
+password.addEventListener('input', passwordTyped)
+showPass.addEventListener('click', showPassword)
+
+
